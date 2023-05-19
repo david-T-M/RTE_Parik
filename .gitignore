@@ -1,0 +1,8 @@
+#carpeta de datos
+data/*
+#archivos generados
+*.pickle
+*.csv
+
+#Archivo de salida del entrenamiento del modelo
+nohup.out
