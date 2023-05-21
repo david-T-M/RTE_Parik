@@ -23,3 +23,16 @@ Modelo de inferencia con paráfrasis
     -Tareas realizadas
     Se parte de un modelo de inferencia base, donde se entrena y replica los resultados de 
     python decomp_attn_evaluacion.py --load "model_trained_base.h5"
+
+    1. Se crean los corpus con las parafrasis y los originales de acuerdo al muestreo
+    2. Crear la estructura de la carpeta de salida
+         salida/
+            entropia
+            eigen/
+            predictions/
+    3. Ejecutar el modelo de inferencia con  python decomp_attn_evaluacion.py --load "model_trained_base.h5" configurando la carpeta a procesar
+    4. Obtener una estadistica de los datos que han sido procesados.
+    5. Obtener el pickle que captura la entropia de los elementos por grupo (muestreo)
+    6. Obtener la estadistica general
+    7. obtener eigen valores
+    8. Obtener par de frases parafraseadas correctas y caracterizarlas
