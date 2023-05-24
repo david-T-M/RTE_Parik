@@ -1,0 +1,173 @@
+0	A girl is showing affection towards a cat.	3086
+1	A woman jogging in a park.	2022
+2	A young woman and old man are playing poker.	6924
+3	A young boy is playing with a basketball.	1166
+4	A woman got married.	6791
+5	The skateboard has 8 wheels.	5290
+6	A tourist has his picture taken on Easter Island.	971
+7	Man sells books to crowd.	2258
+8	A soccer player gets the interception.	5701
+9	The man is at a faire	7341
+10	A golden animal bounds across the snow-covered plateau.	9654
+11	A snowmobile in a blizzard	67
+12	The woman wearing the coat is relaxing.	9339
+13	There is a naked child in the water.	1099
+14	A few people walk with a man in uniform.	707
+15	A man is attempting to run away.	8219
+16	A football coach is instructing a player on the sidelines	4625
+17	The people are going up on the escalator.	347
+18	The right leg is in a brace	2126
+19	A lumberjack harvesting massive redwoods.	2164
+20	The boy is not wet.	2045
+21	Women are outside at a riding competition where they watch men compete.	1279
+22	A clown makes balloon animals.	3922
+23	A brown dog is racing another dog.	4646
+24	A clown rides a tall bike in a parade.	3548
+25	They women are hitting a ball with their arms	379
+26	The woman has sounds emanting from her mouth.	2248
+27	A boy can't swim so he didn't go to the beach with his family.	8362
+28	A yawning dog is tired and sleepy.	2433
+29	Man parachutes off a cliff with a scenic view.	8759
+30	Sin men are in tuxedos	1744
+31	The man and women are at a high priced store.	9555
+32	A girl has tripped and fallen into a pile of raked leaves.	8783
+33	The machinery is very large	4803
+34	A woman has dark skin.	7959
+35	a biy pushing a shopping cart.	5840
+36	A woman is covering her eyes from the bright concert lights.	6739
+37	An older looking couple is riding in the back of a taxi in the middle of a city.	8019
+38	The man and the boy are taking a nap on the bunk beds.	7947
+39	A racecar is being watched.	2715
+40	A woman wearing a striped wrap and a hat is bent over in a cornfield while looking at the camera.	3016
+41	One player on the women's beach volleyball team jumps to spike the ball as her teammate looks on.	2081
+42	A couple celebrates getting engaged.	5019
+43	a man sits at home waiting for his dinner	9735
+44	The men here will eat a lot of food soon.	9079
+45	A crowd of people pick through produce at Farmer's Market.	7313
+46	The performance group is dancing.	5437
+47	A big group marches around.	7364
+48	The duck kept it's wings intact when it dived under the water to catch some fish.	9777
+49	The man and woman are mad at each other.	7023
+50	Two cars were in an accident.	4435
+51	The lady is holding a porcelain cup.	5126
+52	A woman dressed in black shops for a bicycle.	395
+53	Street vendors are skillfully grilling food for customers.	1795
+54	A person is riding his bike up the hill.	7507
+55	The man is not confused.	1016
+56	A man competes in a long distance run.	8399
+57	two men cut grass by hand	3144
+58	The building is brick.	7260
+59	The lady on the table is cutting her sandwhich	9065
+60	a man at the opening of a large tree in his yard	4368
+61	The baby sits on the cats.	8203
+62	People are in the mall shopping.	7293
+63	The old Asian women are chasing each other.	2619
+64	Shipyard workers are standing on the docks	1410
+65	The former First Lady is at the podium for a conference.	1436
+66	A wooden path towards the shore.	8892
+67	An officer on a chopper.	8469
+68	The child is at a waterpark.	8338
+69	The woman is under a lot of stress.	8179
+70	Everything in the photo is red colored.	8055
+71	A young woman dressed in white works in a very good kitchen	8164
+72	A young woman is standing and staring at a painted mural.	9607
+73	A worker falls out of a tree.	3514
+74	A man is skiing on a warm day.	6950
+75	A hot air balloon is crashing down to earth.	5137
+76	The ledge is made of a hard substance.	1715
+77	A man trims a tree	1359
+78	there are many food trucks	4555
+79	The man and the boy are buying shoes.	2488
+80	The street performer takes a break.	3037
+81	For small children are playing in the sand on a deserted beach.	9581
+82	There are some people doing the limbo.	8385
+83	A man is getting gas for his car while he talks on his cellphone.	7198
+84	A child blocks a goal with his head.	7220
+85	A child wearing a red top is standing behind a pretty blond headed child	85
+86	A high school band prepares themselves to put on a musical performance.	2880
+87	The two boys and one girl are limbless.	4832
+88	The cyclist was riding in the morning.	1612
+89	The woman is holding old trashcans to carry various objecs.	1666
+90	They are all playing checkers	4613
+91	Four children who live in a large building are in the courtyard playing.	9579
+92	The boy and girl stand on the lakeshore.	7154
+93	A dark headed man in a suit speaking to a seated woman.	4683
+94	Two people standing.	8742
+95	A big dog is sitting down while trying to catch a ball	5571
+96	The man is from Alaska.	312
+97	A man hunting crocodiles	3348
+98	The college class of mostly females watched a presentation.	1677
+99	A man with a duffel bag walks along side a girl pushing a cart down a busy street.	7731
+100	A young man is sleeping while in the sitting position.	875
+101	A man and woman have mug shots taken because they have been arrested.	186
+102	The woman is blonde.	9218
+103	People are racing up a hill.	1430
+104	The crowd walks around a woman	3487
+105	Two old women hate flowers and would not be near them	8372
+106	Two women in bikinis are flirting with guys.	7816
+107	the boy is wearing formal clothes	4987
+108	The boy lost his pacifier.	8861
+109	The statue is actually a gargoyle and it came to life.	8194
+110	A survivor searches for a meal.	5153
+111	A man is shining some shoes.	7830
+112	a couple sit next to their bikes.	6751
+113	There is not a cat near the baby.	8342
+114	A man posed at a baseball game.	4204
+115	A busker is wearing a hat.	9794
+116	Two attractive adults on a seesaw.	8669
+117	They are swimming in the lake.	8952
+118	Men walk their bikes after getting flat tires.	2748
+119	A mass of people moving in the same direction in order to find the object.	2139
+120	Some men are saluting their superior out of respect.	5917
+121	Two people are near a Sonoma store.	6532
+122	The mother and daughter are fighitn.	2836
+123	The bubble machine makes candy.	1880
+124	The people are creative.	699
+125	A dad and his daughter with an blueberry pie.	7374
+126	Two girls are decorating their Christmas tree.	1391
+127	There are hot dogs and hamburgs on the grill.	1138
+128	The people are together	2634
+129	 A man with a red beard and mustache is smiling and laughing.	7652
+130	A hot summer by the beach on the walkway.	8891
+131	cowboy feeding his horse	6947
+132	woman holds her new baby	9442
+133	he looks through the microscope	7881
+134	Bumper to bumper automobile traffic clogs the street.	3408
+135	A woman is cleaning wood outside from a bucket near the window.	3850
+136	Players pass out footballs to the crowd	4642
+137	The men did not go to work today but instead played bridge.	330
+138	The crowd are composed of one person.	9102
+139	A brown dog walking out of a tunnel.	3066
+140	The lady cooks meat	1318
+141	The children are putting out a fire nearby	3395
+142	A young person is standing next to a relative.	4844
+143	A blond woman is holding a camera and looking at a wall with several pieces of sharks on it.	2557
+144	A person with a book	2734
+145	Someone is at the movies with their friends.	5671
+146	The  people are in Africa	1846
+147	The man has pants on.	7782
+148	The two me are wearing black jackets	6245
+149	A lady shopping.	1342
+150	A brown dog dancing out of a orange and yellow tunnel.	3064
+151	The girl is outside.	3884
+152	The other likes to smoke as well.	5482
+153	The man is wearing safety gear on his head.	946
+154	they are going for a walk	6808
+155	A man takes his daughter out for ice cream.	2960
+156	The people are bickering about politics.	700
+157	A woman is using small cutting utensils on a large net.	6300
+158	The two ladies are outside.	899
+159	A woman wearing white and black grips a steering wheel with both hands as she evades the police.	4742
+160	The people are practicing at a wedding recital.	6420
+161	A dog was sniffing his food before eating it.	7520
+162	The young man is giving the old man a hug.	5008
+163	The man watches the other clean a fish.	1271
+164	The women are beating each other up with their bare fists.	1739
+165	A man with a goatee does a backflip on a skateboard.	1216
+166	The boy is outdoors.	2385
+167	A man is fishing on a boat.	6975
+168	A man and wife sit outside with their children.	2335
+169	The man is throwing a concert outside	3100
+170	A woman holding her sleeping son while walking down the street.	1682
+171	People shopping for veggies at a nice market.	2252
+172	A moving truck being disassembled.	6931

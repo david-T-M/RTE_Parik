@@ -1,0 +1,173 @@
+0	A girl is showing affection towards a cat.
+1	A woman jogging in a park.
+2	A young woman and old man are playing poker.
+3	A young boy is playing with a basketball.
+4	A woman got married.
+5	The skateboard has 8 wheels.
+6	A tourist has his picture taken on Easter Island.
+7	Man sells books to crowd.
+8	A soccer player gets the interception.
+9	The man is at a faire
+10	A golden animal bounds across the snow-covered plateau.
+11	A snowmobile in a blizzard
+12	The woman wearing the coat is relaxing.
+13	There is a naked child in the water.
+14	A few people walk with a man in uniform.
+15	A man is attempting to run away.
+16	A football coach is instructing a player on the sidelines
+17	The people are going up on the escalator.
+18	The right leg is in a brace
+19	A lumberjack harvesting massive redwoods.
+20	The boy is not wet.
+21	Women are outside at a riding competition where they watch men compete.
+22	A clown makes balloon animals.
+23	A brown dog is racing another dog.
+24	A clown rides a tall bike in a parade.
+25	They women are hitting a ball with their arms
+26	The woman has sounds emanting from her mouth.
+27	A boy can't swim so he didn't go to the beach with his family.
+28	A yawning dog is tired and sleepy.
+29	Man parachutes off a cliff with a scenic view.
+30	Sin men are in tuxedos
+31	The man and women are at a high priced store.
+32	A girl has tripped and fallen into a pile of raked leaves.
+33	The machinery is very large
+34	A woman has dark skin.
+35	a biy pushing a shopping cart.
+36	A woman is covering her eyes from the bright concert lights.
+37	An older looking couple is riding in the back of a taxi in the middle of a city.
+38	The man and the boy are taking a nap on the bunk beds.
+39	A racecar is being watched.
+40	A woman wearing a striped wrap and a hat is bent over in a cornfield while looking at the camera.
+41	One player on the women's beach volleyball team jumps to spike the ball as her teammate looks on.
+42	A couple celebrates getting engaged.
+43	a man sits at home waiting for his dinner
+44	The men here will eat a lot of food soon.
+45	A crowd of people pick through produce at Farmer's Market.
+46	The performance group is dancing.
+47	A big group marches around.
+48	The duck kept it's wings intact when it dived under the water to catch some fish.
+49	The man and woman are mad at each other.
+50	Two cars were in an accident.
+51	The lady is holding a porcelain cup.
+52	A woman dressed in black shops for a bicycle.
+53	Street vendors are skillfully grilling food for customers.
+54	A person is riding his bike up the hill.
+55	The man is not confused.
+56	A man competes in a long distance run.
+57	two men cut grass by hand
+58	The building is brick.
+59	The lady on the table is cutting her sandwhich
+60	a man at the opening of a large tree in his yard
+61	The baby sits on the cats.
+62	People are in the mall shopping.
+63	The old Asian women are chasing each other.
+64	Shipyard workers are standing on the docks
+65	The former First Lady is at the podium for a conference.
+66	A wooden path towards the shore.
+67	An officer on a chopper.
+68	The child is at a waterpark.
+69	The woman is under a lot of stress.
+70	Everything in the photo is red colored.
+71	A young woman dressed in white works in a very good kitchen
+72	A young woman is standing and staring at a painted mural.
+73	A worker falls out of a tree.
+74	A man is skiing on a warm day.
+75	A hot air balloon is crashing down to earth.
+76	The ledge is made of a hard substance.
+77	A man trims a tree
+78	there are many food trucks
+79	The man and the boy are buying shoes.
+80	The street performer takes a break.
+81	For small children are playing in the sand on a deserted beach.
+82	There are some people doing the limbo.
+83	A man is getting gas for his car while he talks on his cellphone.
+84	A child blocks a goal with his head.
+85	A child wearing a red top is standing behind a pretty blond headed child
+86	A high school band prepares themselves to put on a musical performance.
+87	The two boys and one girl are limbless.
+88	The cyclist was riding in the morning.
+89	The woman is holding old trashcans to carry various objecs.
+90	They are all playing checkers
+91	Four children who live in a large building are in the courtyard playing.
+92	The boy and girl stand on the lakeshore.
+93	A dark headed man in a suit speaking to a seated woman.
+94	Two people standing.
+95	A big dog is sitting down while trying to catch a ball
+96	The man is from Alaska.
+97	A man hunting crocodiles
+98	The college class of mostly females watched a presentation.
+99	A man with a duffel bag walks along side a girl pushing a cart down a busy street.
+100	A young man is sleeping while in the sitting position.
+101	A man and woman have mug shots taken because they have been arrested.
+102	The woman is blonde.
+103	People are racing up a hill.
+104	The crowd walks around a woman
+105	Two old women hate flowers and would not be near them
+106	Two women in bikinis are flirting with guys.
+107	the boy is wearing formal clothes
+108	The boy lost his pacifier.
+109	The statue is actually a gargoyle and it came to life.
+110	A survivor searches for a meal.
+111	A man is shining some shoes.
+112	a couple sit next to their bikes.
+113	There is not a cat near the baby.
+114	A man posed at a baseball game.
+115	A busker is wearing a hat.
+116	Two attractive adults on a seesaw.
+117	They are swimming in the lake.
+118	Men walk their bikes after getting flat tires.
+119	A mass of people moving in the same direction in order to find the object.
+120	Some men are saluting their superior out of respect.
+121	Two people are near a Sonoma store.
+122	The mother and daughter are fighitn.
+123	The bubble machine makes candy.
+124	The people are creative.
+125	A dad and his daughter with an blueberry pie.
+126	Two girls are decorating their Christmas tree.
+127	There are hot dogs and hamburgs on the grill.
+128	The people are together
+129	 A man with a red beard and mustache is smiling and laughing.
+130	A hot summer by the beach on the walkway.
+131	cowboy feeding his horse
+132	woman holds her new baby
+133	he looks through the microscope
+134	Bumper to bumper automobile traffic clogs the street.
+135	A woman is cleaning wood outside from a bucket near the window.
+136	Players pass out footballs to the crowd
+137	The men did not go to work today but instead played bridge.
+138	The crowd are composed of one person.
+139	A brown dog walking out of a tunnel.
+140	The lady cooks meat
+141	The children are putting out a fire nearby
+142	A young person is standing next to a relative.
+143	A blond woman is holding a camera and looking at a wall with several pieces of sharks on it.
+144	A person with a book
+145	Someone is at the movies with their friends.
+146	The  people are in Africa
+147	The man has pants on.
+148	The two me are wearing black jackets
+149	A lady shopping.
+150	A brown dog dancing out of a orange and yellow tunnel.
+151	The girl is outside.
+152	The other likes to smoke as well.
+153	The man is wearing safety gear on his head.
+154	they are going for a walk
+155	A man takes his daughter out for ice cream.
+156	The people are bickering about politics.
+157	A woman is using small cutting utensils on a large net.
+158	The two ladies are outside.
+159	A woman wearing white and black grips a steering wheel with both hands as she evades the police.
+160	The people are practicing at a wedding recital.
+161	A dog was sniffing his food before eating it.
+162	The young man is giving the old man a hug.
+163	The man watches the other clean a fish.
+164	The women are beating each other up with their bare fists.
+165	A man with a goatee does a backflip on a skateboard.
+166	The boy is outdoors.
+167	A man is fishing on a boat.
+168	A man and wife sit outside with their children.
+169	The man is throwing a concert outside
+170	A woman holding her sleeping son while walking down the street.
+171	People shopping for veggies at a nice market.
+172	A moving truck being disassembled.
