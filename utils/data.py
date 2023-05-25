@@ -147,7 +147,7 @@ class SNLIData(Data):
         data_path=None,
         max_length=50,
         nlp_vectors=None,
-        normed=False,
+        normed=True,
         pos_to_remove=['PUNCT'],
         add_questions=None,
         categorize=False

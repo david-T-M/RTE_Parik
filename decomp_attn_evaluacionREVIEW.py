@@ -153,7 +153,7 @@ class DecomposableAttention:
                                         outputs=self.model.get_layer(layer_name).output)
         intermediate_output = intermediate_layer_model.predict(x)
         
-        print("salida: ",x[0][0][2])#,intermediate_output[0][0])
+        print("salida: ",x[1][0][2])#,intermediate_output[0][0])
         #Vamos a generar un dataframe con el indice del ejemplo (T,H) en el TEST, su matriz de alineamiento
         # Así como su representación de emebeddings de los tokens de T y H.
         new_data = {'Main index' : [], 'Text' : [], 'Hipotesis' : [], 'R_Text' : [], 'R_Hip' : [], 
@@ -163,7 +163,7 @@ class DecomposableAttention:
             new_data['Main index'].append(i)
             new_data['M_Align'].append(intermediate_output[i])
             new_data['R_Text'].append(x[0][i])
-            new_data['R_Hip'].append(x[1][i])
+            new_data['R_Hip'].append(x[1][i]) 
             new_data['Prediction'].append(predictions[i])
         
         # Save history
@@ -278,7 +278,7 @@ if __name__ == '__main__':
             d['Paraphrase'].append(sd.parafraseo[i])
             d['Idx'].append(sd.idxs[i])
         d=pd.DataFrame(d)
-        d.to_pickle("./data/gpt3_salida/p"+e.split('\\')[-1]+".pickle")
+        d.to_pickle("./data/gpt3_salida/p"+e.split('/')[-1]+".pickle")
         resultados.append((e,r))
     df=pd.DataFrame(resultados)
     df.to_csv("./data/gpt3_salida/resultados.csv")

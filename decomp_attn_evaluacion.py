@@ -256,7 +256,7 @@ if __name__ == '__main__':
     # 
     
 
-    a=glob.glob('data/Only_training_hipotesis/**/*.csv')
+    a=glob.glob('data/salida_p/**/*.csv')
     resultados=[]
     for e in a:
         print('Loading the SNLI dataset...',e)
@@ -278,9 +278,9 @@ if __name__ == '__main__':
             d['Paraphrase'].append(sd.parafraseo[i])
             d['Idx'].append(sd.idxs[i])
         d=pd.DataFrame(d)
-        d.to_pickle("./data/Only_training_hipotesis_salida/p"+e.split('\\')[-1]+".pickle")
+        d.to_pickle("./data/salida_prueba/p"+e.split('/')[-1]+".pickle")
         resultados.append((e,r))
     df=pd.DataFrame(resultados)
-    df.to_csv("./data/Only_training_hipotesis_salida/resultados.csv")
+    df.to_csv("./data/salida_prueba/resultados.csv")
 
     #sd.save_oov_to_path()
