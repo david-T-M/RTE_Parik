@@ -148,11 +148,12 @@ class DecomposableAttention:
         results = self.model.evaluate(x,y)
         print(results)
         
-        layer_name = 'dot_1'
+        layer_name = 'input_1'
         intermediate_layer_model = Model(inputs=self.model.input,
                                         outputs=self.model.get_layer(layer_name).output)
         intermediate_output = intermediate_layer_model.predict(x)
-
+        
+        print("salida: ",x[0][0][2])#,intermediate_output[0][0])
         #Vamos a generar un dataframe con el indice del ejemplo (T,H) en el TEST, su matriz de alineamiento
         # Así como su representación de emebeddings de los tokens de T y H.
         new_data = {'Main index' : [], 'Text' : [], 'Hipotesis' : [], 'R_Text' : [], 'R_Hip' : [], 
@@ -256,7 +257,7 @@ if __name__ == '__main__':
     # 
     
 
-    a=glob.glob('data/Only_training_hipotesis/**/*.csv')
+    a=glob.glob('data/gpt3/**/*.csv')
     resultados=[]
     for e in a:
         print('Loading the SNLI dataset...',e)
@@ -269,8 +270,7 @@ if __name__ == '__main__':
             normed=True
         )
         x,y=sd.data_test()
-        #r,d=model.test_on_generator(x,y,steps=sd.test_idx.shape[0])
-        r,d=model.test_on_generator(x,y,steps=50000)
+        r,d=model.test_on_generator(x,y,steps=sd.test_idx.shape[0])
         for i in range(sd.test_idx.shape[0]):
             d['Text'].append(sd.get_sent_words(sd.sents1[i]))
             d['Hipotesis'].append(sd.get_sent_words(sd.sents2[i]))
@@ -278,9 +278,9 @@ if __name__ == '__main__':
             d['Paraphrase'].append(sd.parafraseo[i])
             d['Idx'].append(sd.idxs[i])
         d=pd.DataFrame(d)
-        d.to_pickle("./data/Only_training_hipotesis_salida/p"+e.split('\\')[-1]+".pickle")
+        d.to_pickle("./data/gpt3_salida/p"+e.split('\\')[-1]+".pickle")
         resultados.append((e,r))
     df=pd.DataFrame(resultados)
-    df.to_csv("./data/Only_training_hipotesis_salida/resultados.csv")
+    df.to_csv("./data/gpt3_salida/resultados.csv")
 
     #sd.save_oov_to_path()
