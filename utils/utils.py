@@ -14,7 +14,7 @@ def permanent_hash(o):
 # Load vectors from dict
 def load_vectors_as_dict(path):
     vectors = {}
-    with open(path, 'r') as f:
+    with open(path, 'r', encoding="utf8") as f:
         line = f.readline()
         while line:
             # Split on white spaces

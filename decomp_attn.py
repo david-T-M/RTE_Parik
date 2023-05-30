@@ -208,7 +208,7 @@ if __name__ == '__main__':
         data_path='data/train_dev_test.csv',
         max_length=args.max_length,
         nlp_vectors=args.vectors,
-        pos_to_remove=['SPACE'],
+        pos_to_remove=['SPACE','PUNCT'],
         categorize=True,
         normed=True
       )
@@ -241,4 +241,4 @@ if __name__ == '__main__':
         sd.batch_generator(indices_set='test', batch_size=args.batch_size, noise=0),
         steps=args.batch_size
     )
-    #sd.save_oov_to_path()
+    sd.save_oov_to_path()

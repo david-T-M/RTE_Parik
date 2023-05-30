@@ -1,0 +1,705 @@
+backend: tensorflow
+class_name: Model
+config:
+  input_layers:
+  - - input_1
+    - 0
+    - 0
+  - - input_2
+    - 0
+    - 0
+  layers:
+  - class_name: InputLayer
+    config:
+      batch_input_shape: !!python/tuple
+      - null
+      - null
+      - 300
+      dtype: float32
+      name: input_1
+      sparse: false
+    inbound_nodes: []
+    name: input_1
+  - class_name: InputLayer
+    config:
+      batch_input_shape: !!python/tuple
+      - null
+      - null
+      - 300
+      dtype: float32
+      name: input_2
+      sparse: false
+    inbound_nodes: []
+    name: input_2
+  - class_name: Model
+    config:
+      input_layers:
+      - - input_3
+        - 0
+        - 0
+      layers:
+      - class_name: InputLayer
+        config:
+          batch_input_shape: !!python/tuple
+          - null
+          - null
+          - 300
+          dtype: float32
+          name: input_3
+          sparse: false
+        inbound_nodes: []
+        name: input_3
+      - class_name: Masking
+        config:
+          mask_value: 0.0
+          name: masking_1
+          trainable: true
+        inbound_nodes:
+        - - - input_3
+            - 0
+            - 0
+            - {}
+        name: masking_1
+      - class_name: MaskedConv1D
+        config:
+          activation: linear
+          activity_regularizer: null
+          bias_constraint: null
+          bias_initializer:
+            class_name: Zeros
+            config: {}
+          bias_regularizer: null
+          data_format: channels_last
+          dilation_rate: !!python/tuple
+          - 1
+          filters: 200
+          kernel_constraint: null
+          kernel_initializer:
+            class_name: VarianceScaling
+            config:
+              distribution: uniform
+              mode: fan_avg
+              scale: 1.0
+              seed: null
+          kernel_regularizer: null
+          kernel_size: !!python/tuple
+          - 1
+          name: masked_conv1d_1
+          padding: same
+          strides: !!python/tuple
+          - 1
+          trainable: true
+          use_bias: true
+        inbound_nodes:
+        - - - masking_1
+            - 0
+            - 0
+            - {}
+        name: masked_conv1d_1
+      - class_name: Dropout
+        config:
+          name: dropout_1
+          noise_shape: null
+          rate: 0.0
+          seed: null
+          trainable: true
+        inbound_nodes:
+        - - - masked_conv1d_1
+            - 0
+            - 0
+            - {}
+        name: dropout_1
+      name: model_1
+      output_layers:
+      - - dropout_1
+        - 0
+        - 0
+    inbound_nodes:
+    - - - input_1
+        - 0
+        - 0
+        - {}
+    - - - input_2
+        - 0
+        - 0
+        - {}
+    name: model_1
+  - class_name: Model
+    config:
+      input_layers:
+      - - input_4
+        - 0
+        - 0
+      layers:
+      - class_name: InputLayer
+        config:
+          batch_input_shape: !!python/tuple
+          - null
+          - null
+          - 200
+          dtype: float32
+          name: input_4
+          sparse: false
+        inbound_nodes: []
+        name: input_4
+      - class_name: Masking
+        config:
+          mask_value: 0.0
+          name: masking_2
+          trainable: true
+        inbound_nodes:
+        - - - input_4
+            - 0
+            - 0
+            - {}
+        name: masking_2
+      - class_name: MaskedConv1D
+        config:
+          activation: relu
+          activity_regularizer: null
+          bias_constraint: null
+          bias_initializer:
+            class_name: Zeros
+            config: {}
+          bias_regularizer: null
+          data_format: channels_last
+          dilation_rate: !!python/tuple
+          - 1
+          filters: 200
+          kernel_constraint: null
+          kernel_initializer:
+            class_name: VarianceScaling
+            config:
+              distribution: uniform
+              mode: fan_avg
+              scale: 1.0
+              seed: null
+          kernel_regularizer: null
+          kernel_size: !!python/tuple
+          - 1
+          name: masked_conv1d_2
+          padding: same
+          strides: !!python/tuple
+          - 1
+          trainable: true
+          use_bias: true
+        inbound_nodes:
+        - - - masking_2
+            - 0
+            - 0
+            - {}
+        name: masked_conv1d_2
+      - class_name: Masking
+        config:
+          mask_value: 0.0
+          name: masking_3
+          trainable: true
+        inbound_nodes:
+        - - - masked_conv1d_2
+            - 0
+            - 0
+            - {}
+        name: masking_3
+      - class_name: MaskedConv1D
+        config:
+          activation: relu
+          activity_regularizer: null
+          bias_constraint: null
+          bias_initializer:
+            class_name: Zeros
+            config: {}
+          bias_regularizer: null
+          data_format: channels_last
+          dilation_rate: !!python/tuple
+          - 1
+          filters: 200
+          kernel_constraint: null
+          kernel_initializer:
+            class_name: VarianceScaling
+            config:
+              distribution: uniform
+              mode: fan_avg
+              scale: 1.0
+              seed: null
+          kernel_regularizer: null
+          kernel_size: !!python/tuple
+          - 1
+          name: masked_conv1d_3
+          padding: same
+          strides: !!python/tuple
+          - 1
+          trainable: true
+          use_bias: true
+        inbound_nodes:
+        - - - masking_3
+            - 0
+            - 0
+            - {}
+        name: masked_conv1d_3
+      - class_name: Dropout
+        config:
+          name: dropout_2
+          noise_shape: null
+          rate: 0.4
+          seed: null
+          trainable: true
+        inbound_nodes:
+        - - - masked_conv1d_3
+            - 0
+            - 0
+            - {}
+        name: dropout_2
+      name: model_2
+      output_layers:
+      - - dropout_2
+        - 0
+        - 0
+    inbound_nodes:
+    - - - model_1
+        - 1
+        - 0
+        - {}
+    - - - model_1
+        - 2
+        - 0
+        - {}
+    name: model_2
+  - class_name: Permute
+    config:
+      dims: !!python/tuple
+      - 2
+      - 1
+      name: permute_1
+      trainable: true
+    inbound_nodes:
+    - - - model_2
+        - 2
+        - 0
+        - {}
+    name: permute_1
+  - class_name: Dot
+    config:
+      axes: !!python/tuple
+      - 2
+      - 1
+      name: dot_1
+      normalize: false
+      trainable: true
+    inbound_nodes:
+    - - - model_2
+        - 1
+        - 0
+        - &id001 {}
+      - - permute_1
+        - 0
+        - 0
+        - *id001
+    name: dot_1
+  - class_name: Permute
+    config:
+      dims: !!python/tuple
+      - 2
+      - 1
+      name: permute_2
+      trainable: true
+    inbound_nodes:
+    - - - dot_1
+        - 0
+        - 0
+        - {}
+    name: permute_2
+  - class_name: Masking2D
+    config:
+      mask_value: 0.0
+      name: masking2d_1
+      trainable: true
+    inbound_nodes:
+    - - - dot_1
+        - 0
+        - 0
+        - {}
+    name: masking2d_1
+  - class_name: Masking2D
+    config:
+      mask_value: 0.0
+      name: masking2d_2
+      trainable: true
+    inbound_nodes:
+    - - - permute_2
+        - 0
+        - 0
+        - {}
+    name: masking2d_2
+  - class_name: Softmax2D
+    config:
+      name: softmax2d_1
+      trainable: true
+    inbound_nodes:
+    - - - masking2d_1
+        - 0
+        - 0
+        - {}
+    name: softmax2d_1
+  - class_name: Softmax2D
+    config:
+      name: softmax2d_2
+      trainable: true
+    inbound_nodes:
+    - - - masking2d_2
+        - 0
+        - 0
+        - {}
+    name: softmax2d_2
+  - class_name: Dot
+    config:
+      axes: !!python/tuple
+      - 2
+      - 1
+      name: dot_3
+      normalize: false
+      trainable: true
+    inbound_nodes:
+    - - - softmax2d_1
+        - 0
+        - 0
+        - &id002 {}
+      - - model_1
+        - 2
+        - 0
+        - *id002
+    name: dot_3
+  - class_name: Dot
+    config:
+      axes: !!python/tuple
+      - 2
+      - 1
+      name: dot_2
+      normalize: false
+      trainable: true
+    inbound_nodes:
+    - - - softmax2d_2
+        - 0
+        - 0
+        - &id003 {}
+      - - model_1
+        - 1
+        - 0
+        - *id003
+    name: dot_2
+  - class_name: Concatenate
+    config:
+      axis: -1
+      name: concatenate_1
+      trainable: true
+    inbound_nodes:
+    - - - model_1
+        - 1
+        - 0
+        - &id004 {}
+      - - dot_3
+        - 0
+        - 0
+        - *id004
+    name: concatenate_1
+  - class_name: Concatenate
+    config:
+      axis: -1
+      name: concatenate_2
+      trainable: true
+    inbound_nodes:
+    - - - model_1
+        - 2
+        - 0
+        - &id005 {}
+      - - dot_2
+        - 0
+        - 0
+        - *id005
+    name: concatenate_2
+  - class_name: Model
+    config:
+      input_layers:
+      - - input_5
+        - 0
+        - 0
+      layers:
+      - class_name: InputLayer
+        config:
+          batch_input_shape: !!python/tuple
+          - null
+          - null
+          - 400
+          dtype: float32
+          name: input_5
+          sparse: false
+        inbound_nodes: []
+        name: input_5
+      - class_name: Masking
+        config:
+          mask_value: 0.0
+          name: masking_4
+          trainable: true
+        inbound_nodes:
+        - - - input_5
+            - 0
+            - 0
+            - {}
+        name: masking_4
+      - class_name: MaskedConv1D
+        config:
+          activation: relu
+          activity_regularizer: null
+          bias_constraint: null
+          bias_initializer:
+            class_name: Zeros
+            config: {}
+          bias_regularizer: null
+          data_format: channels_last
+          dilation_rate: !!python/tuple
+          - 1
+          filters: 200
+          kernel_constraint: null
+          kernel_initializer:
+            class_name: VarianceScaling
+            config:
+              distribution: uniform
+              mode: fan_avg
+              scale: 1.0
+              seed: null
+          kernel_regularizer: null
+          kernel_size: !!python/tuple
+          - 1
+          name: masked_conv1d_4
+          padding: same
+          strides: !!python/tuple
+          - 1
+          trainable: true
+          use_bias: true
+        inbound_nodes:
+        - - - masking_4
+            - 0
+            - 0
+            - {}
+        name: masked_conv1d_4
+      - class_name: Masking
+        config:
+          mask_value: 0.0
+          name: masking_5
+          trainable: true
+        inbound_nodes:
+        - - - masked_conv1d_4
+            - 0
+            - 0
+            - {}
+        name: masking_5
+      - class_name: MaskedConv1D
+        config:
+          activation: relu
+          activity_regularizer: null
+          bias_constraint: null
+          bias_initializer:
+            class_name: Zeros
+            config: {}
+          bias_regularizer: null
+          data_format: channels_last
+          dilation_rate: !!python/tuple
+          - 1
+          filters: 200
+          kernel_constraint: null
+          kernel_initializer:
+            class_name: VarianceScaling
+            config:
+              distribution: uniform
+              mode: fan_avg
+              scale: 1.0
+              seed: null
+          kernel_regularizer: null
+          kernel_size: !!python/tuple
+          - 1
+          name: masked_conv1d_5
+          padding: same
+          strides: !!python/tuple
+          - 1
+          trainable: true
+          use_bias: true
+        inbound_nodes:
+        - - - masking_5
+            - 0
+            - 0
+            - {}
+        name: masked_conv1d_5
+      - class_name: Dropout
+        config:
+          name: dropout_3
+          noise_shape: null
+          rate: 0.4
+          seed: null
+          trainable: true
+        inbound_nodes:
+        - - - masked_conv1d_5
+            - 0
+            - 0
+            - {}
+        name: dropout_3
+      name: model_3
+      output_layers:
+      - - dropout_3
+        - 0
+        - 0
+    inbound_nodes:
+    - - - concatenate_1
+        - 0
+        - 0
+        - {}
+    - - - concatenate_2
+        - 0
+        - 0
+        - {}
+    name: model_3
+  - class_name: Masking
+    config:
+      mask_value: 0.0
+      name: masking_6
+      trainable: true
+    inbound_nodes:
+    - - - model_3
+        - 1
+        - 0
+        - {}
+    name: masking_6
+  - class_name: Masking
+    config:
+      mask_value: 0.0
+      name: masking_7
+      trainable: true
+    inbound_nodes:
+    - - - model_3
+        - 2
+        - 0
+        - {}
+    name: masking_7
+  - class_name: MaskedGlobalAveragePooling1D
+    config:
+      name: masked_global_average_pooling1d_1
+      trainable: true
+    inbound_nodes:
+    - - - masking_6
+        - 0
+        - 0
+        - {}
+    name: masked_global_average_pooling1d_1
+  - class_name: MaskedGlobalAveragePooling1D
+    config:
+      name: masked_global_average_pooling1d_2
+      trainable: true
+    inbound_nodes:
+    - - - masking_7
+        - 0
+        - 0
+        - {}
+    name: masked_global_average_pooling1d_2
+  - class_name: Concatenate
+    config:
+      axis: -1
+      name: concatenate_3
+      trainable: true
+    inbound_nodes:
+    - - - masked_global_average_pooling1d_1
+        - 0
+        - 0
+        - &id006 {}
+      - - masked_global_average_pooling1d_2
+        - 0
+        - 0
+        - *id006
+    name: concatenate_3
+  - class_name: Dense
+    config:
+      activation: tanh
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config:
+          distribution: uniform
+          mode: fan_avg
+          scale: 1.0
+          seed: null
+      kernel_regularizer: null
+      name: dense_1
+      trainable: true
+      units: 200
+      use_bias: true
+    inbound_nodes:
+    - - - concatenate_3
+        - 0
+        - 0
+        - {}
+    name: dense_1
+  - class_name: Dense
+    config:
+      activation: tanh
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config:
+          distribution: uniform
+          mode: fan_avg
+          scale: 1.0
+          seed: null
+      kernel_regularizer: null
+      name: dense_2
+      trainable: true
+      units: 200
+      use_bias: true
+    inbound_nodes:
+    - - - dense_1
+        - 0
+        - 0
+        - {}
+    name: dense_2
+  - class_name: Dense
+    config:
+      activation: softmax
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: VarianceScaling
+        config:
+          distribution: uniform
+          mode: fan_avg
+          scale: 1.0
+          seed: null
+      kernel_regularizer: null
+      name: dense_3
+      trainable: true
+      units: 3
+      use_bias: true
+    inbound_nodes:
+    - - - dense_2
+        - 0
+        - 0
+        - {}
+    name: dense_3
+  name: model_4
+  output_layers:
+  - - dense_3
+    - 0
+    - 0
+keras_version: 2.1.0

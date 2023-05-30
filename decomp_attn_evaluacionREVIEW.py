@@ -270,7 +270,7 @@ if __name__ == '__main__':
             normed=True
         )
         x,y=sd.data_test()
-        r,d=model.test_on_generator(x,y,steps=sd.test_idx.shape[0])
+        r,d=model.test_on_generator(x,y,steps=None)
         for i in range(sd.test_idx.shape[0]):
             d['Text'].append(sd.get_sent_words(sd.sents1[i]))
             d['Hipotesis'].append(sd.get_sent_words(sd.sents2[i]))
@@ -278,7 +278,7 @@ if __name__ == '__main__':
             d['Paraphrase'].append(sd.parafraseo[i])
             d['Idx'].append(sd.idxs[i])
         d=pd.DataFrame(d)
-        d.to_pickle("./data/gpt3_salida/p"+e.split('/')[-1]+".pickle")
+        d.to_pickle("./data/gpt3_salida/p"+e.split('\\')[-1]+".pickle")
         resultados.append((e,r))
     df=pd.DataFrame(resultados)
     df.to_csv("./data/gpt3_salida/resultados.csv")

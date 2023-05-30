@@ -13,6 +13,7 @@ from keras import backend as K
 
 from model.layers import Masking2D, Softmax2D, MaskedConv1D, MaskedGlobalAveragePooling1D
 from utils.data import SNLIData
+from utils.utils import *
 
 class DecomposableAttention:
     def __init__(self):
@@ -254,23 +255,23 @@ if __name__ == '__main__':
 ###########################################################
     # proceso de prueba sobre varios conjuntos
     # 
-    
 
-    a=glob.glob('data/salida_p/**/*.csv')
+    a=glob.glob('data/Only_training_hipotesis/**/*.csv')
     resultados=[]
+    nlp_vectors=load_vectors_as_dict("data/glove.840B.300d.txt")
     for e in a:
         print('Loading the SNLI dataset...',e)
         sd = SNLIData(
             data_path=e,
             max_length=args.max_length,
-            nlp_vectors=args.vectors,
-            pos_to_remove=['SPACE'],
+            nlp_vectors=nlp_vectors,
+            pos_to_remove=['SPACE','PUNCT'],
             categorize=True,
             normed=True
         )
         x,y=sd.data_test()
         #r,d=model.test_on_generator(x,y,steps=sd.test_idx.shape[0])
-        r,d=model.test_on_generator(x,y,steps=50000)
+        r,d=model.test_on_generator(x,y,steps=None)
         for i in range(sd.test_idx.shape[0]):
             d['Text'].append(sd.get_sent_words(sd.sents1[i]))
             d['Hipotesis'].append(sd.get_sent_words(sd.sents2[i]))
@@ -278,9 +279,9 @@ if __name__ == '__main__':
             d['Paraphrase'].append(sd.parafraseo[i])
             d['Idx'].append(sd.idxs[i])
         d=pd.DataFrame(d)
-        d.to_pickle("./data/salida_prueba/p"+e.split('/')[-1]+".pickle")
+        d.to_pickle("./data/Only_training_hipotesis_salida/p"+e.split('\\')[-1]+".pickle")
         resultados.append((e,r))
     df=pd.DataFrame(resultados)
-    df.to_csv("./data/salida_prueba/resultados.csv")
+    df.to_csv("./data/Only_training_hipotesis_salida/resultados.csv")
 
     #sd.save_oov_to_path()
