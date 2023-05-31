@@ -18,8 +18,8 @@ class Data:
         sents1,
         sents2,
         targets,
-        #parafraseo,
-        #idxs,
+        parafraseo,
+        idxs,
         max_length=50,
         nlp_vectors=None,
         normed=True,
@@ -35,16 +35,16 @@ class Data:
         self.sents1 = sents1
         self.sents2 = sents2
         self.targets = targets
-        #self.parafraseo = parafraseo
-        #self.idxs = idxs
+        self.parafraseo = parafraseo
+        self.idxs = idxs
 
         self.min_t = np.min(targets)
         self.max_t = np.max(targets)
 
         # Spacy's NLP
         print('Loading NLP...')
-        self.load_nlp()
-        #self.setVectors(self.nlp_vectors)
+        #self.load_nlp()
+        self.setVectors(self.nlp_vectors)
 
         # Placeholder for features
         self.features = {}
@@ -188,11 +188,11 @@ class SNLIData(Data):
         targets = targets.astype(np.float64)
 
         #Identificar la hipótesis parafraseada y la normal así como con cuales corresponde
-        #parafraseo = np.array([ent for ent in pairs.Parafraseo])
-        #parafraseo = parafraseo.astype(np.int16)
+        parafraseo = np.array([ent for ent in pairs.Parafraseo])
+        parafraseo = parafraseo.astype(np.int16)
 
-        #idxs = np.array([ent for ent in pairs.Idx])
-        #idxs = idxs.astype(np.int16)
+        idxs = np.array([ent for ent in pairs.Idx])
+        idxs = idxs.astype(np.int16)
 
         # Store information relevant to features in dict for speed
         print('Storing feature relevant info...')
@@ -207,8 +207,8 @@ class SNLIData(Data):
             sents1,
             sents2,
             targets,
-            #parafraseo,
-            #idxs,
+            parafraseo,
+            idxs,
             max_length=max_length,
             nlp_vectors=nlp_vectors,
             normed=normed,
@@ -216,9 +216,9 @@ class SNLIData(Data):
             )
 
         # Initialize train/validation indices
-        self.train_idx = np.where(pairs['SET'].values == 'TRAIN')[0]
-        self.valid_idx = np.where(pairs['SET'].values == 'DEV')[0]
-        #self.test_idx = np.where(pairs['SET'].values == 'TEST')[0]
+        #self.train_idx = np.where(pairs['SET'].values == 'TRAIN')[0]
+        #self.valid_idx = np.where(pairs['SET'].values == 'DEV')[0]
+        self.test_idx = np.where(pairs['SET'].values == 'TEST')[0]
 
     def save_oov_to_path(self):
         oov_path,ext = os.path.splitext(self.nlp_vectors)

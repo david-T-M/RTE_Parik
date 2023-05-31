@@ -256,7 +256,7 @@ if __name__ == '__main__':
     # proceso de prueba sobre varios conjuntos
     # 
 
-    a=glob.glob('data/Only_training_hipotesis/**/*.csv')
+    a=glob.glob('data/Only_training_hipotesisPUNCT/**/*.csv')
     resultados=[]
     nlp_vectors=load_vectors_as_dict("data/glove.840B.300d.txt")
     for e in a:
@@ -279,9 +279,9 @@ if __name__ == '__main__':
             d['Paraphrase'].append(sd.parafraseo[i])
             d['Idx'].append(sd.idxs[i])
         d=pd.DataFrame(d)
-        d.to_pickle("./data/Only_training_hipotesis_salida/p"+e.split('\\')[-1]+".pickle")
+        d.to_pickle("./data/Only_training_hipotesisPUNCT_salida/p"+e.split('/')[-1]+".pickle")
         resultados.append((e,r))
     df=pd.DataFrame(resultados)
-    df.to_csv("./data/Only_training_hipotesis_salida/resultados.csv")
+    df.to_csv("./data/Only_training_hipotesisPUNCT_salida/resultados.csv")
 
     #sd.save_oov_to_path()
