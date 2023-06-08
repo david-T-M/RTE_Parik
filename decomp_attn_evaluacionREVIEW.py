@@ -157,7 +157,8 @@ class DecomposableAttention:
         #Vamos a generar un dataframe con el indice del ejemplo (T,H) en el TEST, su matriz de alineamiento
         # Así como su representación de emebeddings de los tokens de T y H.
         new_data = {'Main index' : [], 'Text' : [], 'Hipotesis' : [], 'R_Text' : [], 'R_Hip' : [], 
-                    'M_Align' : [],'Prediction' : [],'Gold_label' : [],'Paraphrase' : [],'Idx' : []}  
+                    'M_Align' : [],'Prediction' : [],'Gold_label' : [],'Paraphrase' : [],'Idx' : [],'Input1' : []
+                    ,'Input2' : [],'Model1' : [],'Model2' : [],'Permute1' : [],'Dot1' : []}  
         predictions = self.model.predict(x)
         for i in range(intermediate_output.shape[0]):
             new_data['Main index'].append(i)
@@ -165,6 +166,43 @@ class DecomposableAttention:
             new_data['R_Text'].append(x[0][i])
             new_data['R_Hip'].append(x[1][i]) 
             new_data['Prediction'].append(predictions[i])
+        
+        layer_name = 'input_1'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Input1'].append(intermediate_output[i])
+        layer_name = 'input_2'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Input2'].append(intermediate_output[i])
+        layer_name = 'model_1'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_output_at(layer_name).output)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Model1'].append(intermediate_output[i])
+        layer_name = 'model_2'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_output_at(layer_name).output)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Model2'].append(intermediate_output[i])
+        layer_name = 'permute_1'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Permute1'].append(intermediate_output[i])
+        layer_name = 'dot_1'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Dot1'].append(intermediate_output[i])
+        #Vamos a generar un dataframe con el indice del ejemplo (T,H) en el TEST, su matriz de alineamiento
+        # Así como su representación de emebeddings de los tokens de T y H.
         
         # Save history
         print("Envío de resultados y dataframe")

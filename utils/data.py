@@ -43,8 +43,8 @@ class Data:
 
         # Spacy's NLP
         print('Loading NLP...')
-        #self.load_nlp()
-        self.setVectors(self.nlp_vectors)
+        self.load_nlp()
+        #self.setVectors(self.nlp_vectors)
 
         # Placeholder for features
         self.features = {}
