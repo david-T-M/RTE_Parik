@@ -63,14 +63,23 @@ def entropy(X, k=1):
 
     # Distance to kth nearest neighbor
     r = nearest_distances(X, k)  # squared distances
+    print(r)
     n, d = X.shape
+    print(n,d)
     volume_unit_ball = (pi ** (.5 * d)) / gamma(.5 * d + 1)
+    # print(volume_unit_ball)
     '''
     F. Perez-Cruz, (2008). Estimation of Information Theoretic Measures
     for Continuous Random Variables. Advances in Neural Information
     Processing Systems 21 (NIPS). Vancouver (Canada), December.
     return d * mean(log(r))+log(volume_unit_ball)+log(n-1)-log(k)
     '''
+    # print(X.dtype)
+    
+    op1=r + np.finfo(X.dtype).eps
+    #print(op1)
+    op2=np.log(op1)
+    #print(op2)
     return (d * np.mean(np.log(r + np.finfo(X.dtype).eps)) +
             np.log(volume_unit_ball) + psi(n) - psi(k))
 
@@ -167,7 +176,7 @@ def test_mutual_information():
     n = 50000
     rng = np.random.RandomState(0)
     # P = np.random.randn(2, 2)
-    P = np.array([[1, 0], [0.5, 1]])
+    P = np.array([[1, 0], [1, 0]])
     C = np.dot(P, P.T)
     U = rng.randn(2, n)
     Z = np.dot(P, U).T
