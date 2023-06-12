@@ -67,6 +67,7 @@ class DecomposableAttention:
         # S_AB = S_AS_B^T
         S_AB = dot([S_A, Permute((2,1))(S_B)], axes=(2,1))
         print(S_AB)
+        
         # Row-wise attention 
         Sp_AB = Softmax2D()(Masking2D()(S_AB))
         Sp_BA = Softmax2D()(Masking2D()(Permute((2,1))(S_AB)))
@@ -153,12 +154,14 @@ class DecomposableAttention:
                                         outputs=self.model.get_layer(layer_name).output)
         intermediate_output = intermediate_layer_model.predict(x)
         
-        print("salida: ",x[1][0][2])#,intermediate_output[0][0])
+        #print("salida: ",x[1][0][2])#,intermediate_output[0][0])
         #Vamos a generar un dataframe con el indice del ejemplo (T,H) en el TEST, su matriz de alineamiento
         # Así como su representación de emebeddings de los tokens de T y H.
         new_data = {'Main index' : [], 'Text' : [], 'Hipotesis' : [], 'R_Text' : [], 'R_Hip' : [], 
                     'M_Align' : [],'Prediction' : [],'Gold_label' : [],'Paraphrase' : [],'Idx' : [],'Input1' : []
-                    ,'Input2' : [],'Model1' : [],'Model2' : [],'Permute1' : [],'Dot1' : []}  
+                    ,'Input2' : [],'Model1' : [],'Model2' : [],'Permute1' : [],'Dot1' : [],'Dot2' : []
+                    ,'Dot3' : [],'Concatenate1' : [],'Concatenate2' : [],'Concatenate3' : [],'Dense1' : []
+                    ,'Dense2' : [],'Dense3' : []}  
         predictions = self.model.predict(x)
         for i in range(intermediate_output.shape[0]):
             new_data['Main index'].append(i)
@@ -181,12 +184,12 @@ class DecomposableAttention:
             new_data['Input2'].append(intermediate_output[i])
         layer_name = 'model_1'
         intermediate_layer_model = Model(inputs=self.model.input,
-                                        outputs=self.model.get_output_at(layer_name).output)
+                                        outputs=self.model.outputs)
         for i in range(intermediate_output.shape[0]):
             new_data['Model1'].append(intermediate_output[i])
         layer_name = 'model_2'
         intermediate_layer_model = Model(inputs=self.model.input,
-                                        outputs=self.model.get_output_at(layer_name).output)
+                                        outputs=self.model.outputs)
         for i in range(intermediate_output.shape[0]):
             new_data['Model2'].append(intermediate_output[i])
         layer_name = 'permute_1'
@@ -201,6 +204,54 @@ class DecomposableAttention:
         intermediate_output = intermediate_layer_model.predict(x)
         for i in range(intermediate_output.shape[0]):
             new_data['Dot1'].append(intermediate_output[i])
+        layer_name = 'dot_2'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Dot2'].append(intermediate_output[i])
+        layer_name = 'dot_3'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Dot3'].append(intermediate_output[i])
+        layer_name = 'concatenate_1'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Concatenate1'].append(intermediate_output[i])
+        layer_name = 'concatenate_2'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Concatenate2'].append(intermediate_output[i])
+        layer_name = 'concatenate_3'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Concatenate3'].append(intermediate_output[i])
+        layer_name = 'dense_1'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Dense1'].append(intermediate_output[i])
+        layer_name = 'dense_2'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Dense2'].append(intermediate_output[i])
+        layer_name = 'dense_3'
+        intermediate_layer_model = Model(inputs=self.model.input,
+                                        outputs=self.model.get_layer(layer_name).output)
+        intermediate_output = intermediate_layer_model.predict(x)
+        for i in range(intermediate_output.shape[0]):
+            new_data['Dense3'].append(intermediate_output[i])
         #Vamos a generar un dataframe con el indice del ejemplo (T,H) en el TEST, su matriz de alineamiento
         # Así como su representación de emebeddings de los tokens de T y H.
         
@@ -295,7 +346,7 @@ if __name__ == '__main__':
     # 
     
 
-    a=glob.glob('data/gpt3/**/*.csv')
+    a=glob.glob('data/ejercicio/**/*.csv')
     resultados=[]
     for e in a:
         print('Loading the SNLI dataset...',e)
@@ -316,9 +367,9 @@ if __name__ == '__main__':
             d['Paraphrase'].append(sd.parafraseo[i])
             d['Idx'].append(sd.idxs[i])
         d=pd.DataFrame(d)
-        d.to_pickle("./data/gpt3_salida/p"+e.split('\\')[-1]+".pickle")
+        d.to_pickle("./data/ejercicio_salida/p"+e.split('\\')[-1]+".pickle")
         resultados.append((e,r))
     df=pd.DataFrame(resultados)
-    df.to_csv("./data/gpt3_salida/resultados.csv")
+    df.to_csv("./data/ejercicio_salida/resultados.csv")
 
     #sd.save_oov_to_path()
